@@ -1,11 +1,11 @@
-# Simulation Parameters pour MacOS & Linux
+# Simulation Parameters pour Windows
 
 ![alt text](https://laboratoirehubertcurien.univ-st-etienne.fr/skins/labhcurien/resources//img/logo.png "Laboratoire Hubert Curien")
 
 Un [Guide Utilisateur](https://github.com/cedric-gormond/simulation_parameters/blob/master/Guide%20utilisateur%20simulation%20parameters.pdf) illustré est disponible dans le dossier du projet.
 
 ## Pour commencer
-**Simulation Parameters** pour MacOS & Linux permet de créer des fichiers paramétrés pour les simulations sur des architectures NoC sur FPGA. Ce programme a été créé pour le **Laboratoire Hubert Curien (CNRS)**.
+**Simulation Parameters** pour Windows permet de créer des fichiers paramétrés pour les simulations sur des architectures NoC sur FPGA. Ce programme a été créé pour le **Laboratoire Hubert Curien (CNRS)**.
 
 ## Installation
 Vous devez extraire le contenu de l'archive dans un espace de travail. Pour utiliser le programme, vous devez lancer l'exécutable `simulation_parameters.exe` contenue dans le dossier.
