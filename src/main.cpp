@@ -32,13 +32,11 @@ using namespace std;
 string current_time;
 
 int main() {
+
     srand (time(NULL));
-    /*
-     * ---------------------------------------------------------------
-     *                             PARAMETERS
-     * ---------------------------------------------------------------
-     */
-    all_scenarios* ALL_SCENARIOS;
+    cout << "Welcome ! " << endl;
+    cout << "This program contains some memory leaks and may crashed."
+            "\"Please re-run the application if it happened !\" " <<endl;
 
     /*
      * ---------------------------------------------------------------
@@ -144,9 +142,6 @@ int main() {
         /*
          *  SCENARIOS
          */
-        ImGui::Text("\n ! This program contains some memory leaks and may crashed. "
-                    "Please re-run the application if it happened ! \n ");
-
         ImGui::Text("Number of scenario (total) :");
         ImGui::InputInt("  ", &size_scenario);
 
@@ -286,6 +281,9 @@ int main() {
          */
         ImGui::Text("Number of files : %d", size_scenario);
         if(ImGui::Button("Generate simulation parameters files")){
+            //pointer of scenario
+            all_scenarios* ALL_SCENARIOS;
+
             //initialisation of scenario
             ALL_SCENARIOS = initAllScenarios(size_scenario, scenario_categories);
 
@@ -312,8 +310,9 @@ int main() {
                 //log
                 my_log.AddLog("%s [info] %s \n", &current_time[0], &output_path_temp[0]);
             }
+            //DO NOT FORGET TO FREE A POINTER !
+            delete[]ALL_SCENARIOS;
         }
-
         /*
          *  LOG
          */

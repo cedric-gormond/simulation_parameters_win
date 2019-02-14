@@ -6,7 +6,7 @@
 
 void create_txt_file(std::ofstream &file_output, all_scenarios *as, int index, std::vector<categories> vect)
 {
-    std::cout << " * Wrtting in file " << std::endl << std::endl;
+    std::cout << " * Writing in file " << std::endl << std::endl;
     int counter = 0;
     for (int i=0; i < vect[index].categories[0]; i++) {
         file_output << "#No." << counter++<<std::endl;
