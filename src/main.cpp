@@ -43,6 +43,9 @@ int main() {
      *                             SFML
      * ---------------------------------------------------------------
      */
+    // (SFML) is a cross-platform software development library designed to provide 
+    // a simple application programming interface (API)
+    
     //Window settings
     sf::RenderWindow window(sf::VideoMode(700, 800), "Simulation Parameters", sf::Style::Close);
     window.setFramerateLimit(30);
@@ -55,6 +58,8 @@ int main() {
      *                             SFML/IMGUI
      * ---------------------------------------------------------------
      */
+    //ImGui is a bloat-free graphical user interface library for C++.
+    
     //Init ImGUI
     ImGui::SFML::Init(window);
 
@@ -68,10 +73,10 @@ int main() {
     ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 3.0f);
 
     // ImGUI - variables
-    static ExampleAppLog my_log;
-    static auto * p_open = new bool;
-    my_log.AddLog("%s [info] Welcome \n", &current_time[0]);
+    static ExampleAppLog my_log; //log variable
+    static auto * p_open = new bool; //window variable
     *p_open = true;
+    my_log.AddLog("%s [info] Welcome \n", &current_time[0]);
 
     //Font
     ImFont* font = io.Fonts->AddFontFromFileTTF("misc/fonts/Roboto-Regular.ttf", 16.0, nullptr);
@@ -86,30 +91,33 @@ int main() {
     static float charge         = 0.5;
     static int idle_time        = 0;
 
-    //Vectors
-    std::vector<categories> scenario_categories(size_scenario); // Vector which contains the categories (Audio, Video, Data), that is the size of audio, video and data of every scenario.
+    // Vectors
+    
+    //scenario_categories : vector which contains the categories (Audio, Video, Data), that is the size of audio, video and data of every scenario.
+    std::vector<categories> scenario_categories(size_scenario); 
+    
+    // RandomX : vectors which contain the randomness bounds of N
+    // Exemple : RandomNbPacketsBound[0]._elem[0] : min nb_packets
+    //           RandomNbPacketsBound[0]._elem[1] : max nb_packets
     std::vector<std::array<int,2>> RandomNbPacketsBound(size_scenario);
     std::vector<std::array<int,2>> RandomPacketSizeBound(size_scenario);
     std::vector<std::array<int,2>> RandomAudioBound(size_scenario);
     std::vector<std::array<int,2>> RandomVideoBound(size_scenario);
     std::vector<std::array<int,2>> RandomDataBound(size_scenario);
 
-    // RandomNbPacketsBound contains bounds (min,max) of randomness of every parameters
-    // Exemple : RandomNbPacketsBound[0]._elem[0] : min nb_packets
-    //           RandomNbPacketsBound[0]._elem[1] : max nb_packets
-    //           RandomNbPacketsBound[1]._elem[0] : min packet_size
-    //           RandomNbPacketsBound[1]._elem[1] : max packet_size
 
-    //Initialisation of vectors
+
+    // Initialisation of vectors
     scenario_categories     = initCategories(size_scenario);
-    RandomNbPacketsBound    = initRandomness(size_scenario, 1, 10);
+    RandomNbPacketsBound    = initRandomness(size_scenario, 1, 10); //min max
     RandomPacketSizeBound   = initRandomness(size_scenario, 1, 200);
     RandomAudioBound        = initRandomness(size_scenario, 1, 10);
     RandomVideoBound        = initRandomness(size_scenario, 1, 10);
     RandomDataBound         = initRandomness(size_scenario, 1, 10);
 
-    //Arrays
+    // Arrays
     int dimensions[2] = {3, 3}; //Dimensions (dimX and dimY) useful for generating source and destination of every category
+    
     /*
      * ---------------------------------------------------------------
      *                      MAIN LOOP
@@ -144,7 +152,8 @@ int main() {
          */
         ImGui::Text("Number of scenario (total) :");
         ImGui::InputInt("  ", &size_scenario);
-
+        
+        //Init categories and randomness bounds with a new size of scenarios
         if(ImGui::Button("Size changed (clear everything)")){
             scenario_categories     = initCategories(size_scenario);
             RandomNbPacketsBound    = initRandomness(size_scenario, 1, 10);
@@ -154,7 +163,7 @@ int main() {
             RandomDataBound         = initRandomness(size_scenario, 1, 10);
         }
 
-        //Resizing all vector with total of scenario
+        //Resizing all vector with the size of scenario
         scenario_categories.resize(size_scenario);
         RandomNbPacketsBound.resize(size_scenario);
         RandomPacketSizeBound.resize(size_scenario);
@@ -281,7 +290,7 @@ int main() {
          */
         ImGui::Text("Number of files : %d", size_scenario);
         if(ImGui::Button("Generate simulation parameters files")){
-            //pointer of scenario
+            //pointer of all scenarios
             all_scenarios* ALL_SCENARIOS;
 
             //initialisation of scenario
