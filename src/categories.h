@@ -22,17 +22,17 @@ long random_between_numbers(long min, long max);
 
 
 /*
- * initCategories
+ * initCategories : returns a vector of categories which contain initialized categories (zeros) 
  */
 std::vector<categories> initCategories(const int size);
 
 /*
- * initRandomness : returns a vector which is initialize with the parameters
+ * initRandomness : returns a vector of int arrays (size 2) which contain initialized ramdoness parameters
  */
 std::vector<std::array<int, 2>> initRandomness(const int size, const int min = 1, const int max = 10);
 
 /*
- * RandomCategories :
+ * RandomCategories : returns a vector of categories which contain randomized categories
  */
 std::vector<categories> RandomCategories(
         const int size,
