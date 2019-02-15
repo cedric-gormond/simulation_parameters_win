@@ -31,32 +31,32 @@ typedef struct {
 
 
 /*
- * initAllScenarios :
+ * initAllScenarios : returns a pointer all_scenario initialized with size_scenario
  */
 all_scenarios* initAllScenarios(const int size_scenario, std::vector<categories> vect);
 
 /*
- * initScenario :
+ * initScenario : returns a pointer of scenarios
  */
 scenario* initScenario(std::vector<categories> vect);
 
 /*
- * initParameters :
+ * initParameters : init the parameters of a scenario
  */
 void initParameters(parameter *p);
 
 /*
- * CreateAllScenarios :
+ * CreateAllScenarios : set the parameters of every scenarios according to the vector vect and arguments charge, dimensions
  */
 void CreateAllScenarios(all_scenarios *as, int size, std::vector<categories> vect, float charge, int dimensions[2]);
 
 /*
- * setSource :
+ * setSource : returns a int between 0 and size[0]*[1]
  */
 int setSource(int dimensions[2]);
 
 /*
- * setDestination :
+ * setDestination : setSource : returns a int between 0 and size[0]*[1] different to source
  */
 int setDestination(parameter p, int dimensions[2]);
 
