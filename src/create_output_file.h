@@ -12,7 +12,7 @@
 #include "parameters.h"
 
 /*
- * Create txt text
+ * Create txt text : create an output file "Simulation Parameter i.txt" according to the parameters at the index i
  */
 void create_txt_file(std::ofstream &file_output, all_scenarios *as, int index, std::vector<categories> vect);
 
