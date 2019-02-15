@@ -11,19 +11,17 @@ Un [Guide Utilisateur](https://github.com/cedric-gormond/simulation_parameters/b
 Vous devez extraire le contenu de l'archive dans un espace de travail. Pour utiliser le programme, vous devez lancer l'exécutable `simulation_parameters.exe` contenue dans le dossier.
 
 ## Comment générer un fichier de simulation ?
-1.   Choisissez le nombre total de scénario que vous voulez réaliser (le nombre est de 2 par défaut). Ce nombre doit être strictement positif. Après avoir changé le nombre de scénarios, appuyez sur le boutton « Size changed », pour prendre en compte les modifications.
+1. Choisissez le nombre total de scénario que vous voulez réaliser (le nombre est de 2 par défaut). Ce nombre doit être strictement positif. Après avoir changé le nombre de scénarios, appuyez sur le boutton « Size changed », pour prendre en compte les modifications.
 
-2.	Précisez les dimensions de l’architecture NoC avec laquelle vous travaillez en entrant le nombre de routeurs en X (dimX) et le nombre de routeurs en Y (dimY).
+2. Précisez les dimensions de l’architecture NoC avec laquelle vous travaillez en entrant le nombre de routeurs en X (dimX) et le nombre de routeurs en Y (dimY).
 
-3.	Pour chaque scénario, remplissez ces paramètres en précisant le nombre d’audio, de vidéo, data, le nombre de paquets, leur taille et la charge (idle) comprise en 1% et 100%. Pour choisir un scénario, faites glisser le curseur.
+3. Pour chaque scénario, remplissez ces paramètres en précisant le nombre d’audio, de vidéo, data, le nombre de paquets, leur taille et la charge (idle) comprise en 1% et 100%. Pour choisir un scénario, faites glisser le curseur.
 
-4.	(Optionnel) Vous avez la possibilité de choisir des paramètres aléatoires en cliquant sur le bouton « Random scenario ».
-
-De plus, vous pouvez configurer ces paramètres aléatoires en spécifiant les bornes min et max où seront compris les nombres aléatoires pour chaque scénario.
-
+4. (Optionnel) Vous avez la possibilité de choisir des paramètres aléatoires en cliquant sur le bouton « Random scenario ».
+De plus, vous pouvez configurer ces paramètres aléatoires en spécifiant les bornes min et max où seront compris les nombres aléatoires pour chaque scénario. 
 Par exemple,  vous pouvez choisir de générer un nombre aléatoire de paquets entre 0 et 10 pour le scénario numéro 1. Attention de bien vérifier les bornes pour chaque scénario : une borne maximale nulle entrainera une erreur.
 
-5.	Cliquez sur « Generate simulation parameters files » pour générer les fichiers de simulation.  Cela génèrera autant de fichiers que de scénarios.
+5. Cliquez sur « Generate simulation parameters files » pour générer les fichiers de simulation.  Cela génèrera autant de fichiers que de scénarios.
 
 ## Comment récupérer un fichier de simulation généré ?
 Les fichiers de simulation sont générés dans le dossier io du projet au format imposé. Les fichiers générés respectent les appellations suivantes : `Simulation Parameters i` avec `i` allant de 0 à nombre de scénario–1.
