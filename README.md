@@ -26,9 +26,6 @@ Par exemple,  vous pouvez choisir de générer un nombre aléatoire de paquets e
 ## Comment récupérer un fichier de simulation généré ?
 Les fichiers de simulation sont générés dans le dossier io du projet au format imposé. Les fichiers générés respectent les appellations suivantes : `Simulation Parameters i` avec `i` allant de 0 à nombre de scénario–1.
 
-## Logs
-Le logiciel possède une partie log permettant de vous informer sur les différentes opérations effectuées.
-
 ## Bugs
 Le programme étant réalisé en peu de temps, celui-ci possède des bugs ou des erreurs mémoires. S’il-vous-plaît, envoyez un mail à l’adresse suivante ou de proposer une issue sur Github afin de les corriger : cedric.gormond@gmail.com 
 
