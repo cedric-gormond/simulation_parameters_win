@@ -31,15 +31,12 @@ std::vector<std::array<int, 2>> initRandomness(const int size, const int min, co
 std::vector<categories> RandomCategories(const int size, std::vector<std::array<int,2>> RandomNbPacketsBound, std::vector<std::array<int,2>> RandomPacketSizeBound, std::vector<std::array<int,2>> RandomAudioBound, std::vector<std::array<int,2>> RandomVideoBound, std::vector<std::array<int,2>> RandomDataBound){
     std::vector<categories> vect_temp(size);
     for (int i = 0; i < size; ++i) {
-        vect_temp[i].categories[0] = random_between_numbers(RandomAudioBound[i]._M_elems[0],RandomAudioBound[i]._M_elems[1]); //Audio
-        vect_temp[i].categories[1] = random_between_numbers(RandomVideoBound[i]._M_elems[0],RandomVideoBound[i]._M_elems[1]); //Video
-        vect_temp[i].categories[2] = random_between_numbers(RandomDataBound[i]._M_elems[0],RandomDataBound[i]._M_elems[1]); //Data
         //Reminder :
         // RandomNbPacketsBound[i]._M_elems[0] <=> min
         // RandomNbPacketsBound[i]._M_elems[1] <=> max
-        // RandomNbPacketsBound[i]._M_elems[0] <=> min
-        // RandomNbPacketsBound[i]._M_elems[1] <=> max
-
+        vect_temp[i].categories[0] = random_between_numbers(RandomAudioBound[i]._M_elems[0],RandomAudioBound[i]._M_elems[1]); //Audio
+        vect_temp[i].categories[1] = random_between_numbers(RandomVideoBound[i]._M_elems[0],RandomVideoBound[i]._M_elems[1]); //Video
+        vect_temp[i].categories[2] = random_between_numbers(RandomDataBound[i]._M_elems[0],RandomDataBound[i]._M_elems[1]); //Data
         vect_temp[i].packet[0]     = random_between_numbers(RandomNbPacketsBound[i]._M_elems[0],RandomNbPacketsBound[i]._M_elems[1]);
         vect_temp[i].packet[1]     = random_between_numbers(RandomPacketSizeBound[i]._M_elems[0],RandomPacketSizeBound[i]._M_elems[1]);
         vect_temp[i].idle          = 0.5;
